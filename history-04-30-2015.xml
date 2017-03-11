@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+    <name>Location history from 05/01/2015 to 05/02/2015</name>
+    <open>1</open>
+    <description/>
+    <StyleMap id="multiTrack">
+        <Pair>
+            <key>normal</key>
+            <styleUrl>#multiTrack_n</styleUrl>
+        </Pair>
+        <Pair>
+            <key>highlight</key>
+            <styleUrl>#multiTrack_h</styleUrl>
+        </Pair>
+    </StyleMap>
+    <Style id="multiTrack_n">
+        <IconStyle>
+            <Icon>
+                <href>http://earth.google.com/images/kml-icons/track-directional/track-0.png</href>
+            </Icon>
+        </IconStyle>
+        <LineStyle>
+            <color>99ffac59</color>
+            <width>6</width>
+        </LineStyle>
+    </Style>
+    <Style id="multiTrack_h">
+        <IconStyle>
+            <scale>1.2</scale>
+            <Icon>
+                <href>http://earth.google.com/images/kml-icons/track-directional/track-0.png</href>
+            </Icon>
+        </IconStyle>
+        <LineStyle>
+            <color>99ffac59</color>
+            <width>8</width>
+        </LineStyle>
+    </Style>
+    <Placemark>
+        <name>Latitude User</name>
+        <description>Location history for Latitude User from 05/01/2015 to 05/02/2015</description>
+        <styleUrl>multiTrack</styleUrl>
+        <gx:Track>
+            <altitudeMode>clampToGround</altitudeMode>
+            <when>2015-05-01T03:49:45.303-07:00</when>
+            <gx:coord>21.7326437 44.8447765 690</gx:coord>
+            <when>2015-05-01T03:50:31.113-07:00</when>
+            <gx:coord>21.7328164 44.8432739 655</gx:coord>
+            <when>2015-05-01T03:51:16.116-07:00</when>
+            <gx:coord>21.7351734 44.8421441 652</gx:coord>
+            <when>2015-05-01T03:52:01.151-07:00</when>
+            <gx:coord>21.7376355 44.8413815 647</gx:coord>
+            <when>2015-05-01T03:52:47.135-07:00</when>
+            <gx:coord>21.7390475 44.8394847 632</gx:coord>
+            <when>2015-05-01T03:53:32.138-07:00</when>
+            <gx:coord>21.740873 44.8375528 625</gx:coord>
+            <when>2015-05-01T03:54:18.146-07:00</when>
+            <gx:coord>21.742911 44.8354645 615</gx:coord>
+            <when>2015-05-01T03:55:04.174-07:00</when>
+            <gx:coord>21.7453648 44.8338933 608</gx:coord>
+            <when>2015-05-01T03:55:50.150-07:00</when>
+            <gx:coord>21.7462934 44.8347086 606</gx:coord>
+            <when>2015-05-01T03:57:16.520-07:00</when>
+            <gx:coord>21.7469183 44.8362561 613</gx:coord>
+            <when>2015-05-01T03:57:57.256-07:00</when>
+            <gx:coord>21.7475352 44.8373766 597</gx:coord>
+            <when>2015-05-01T04:00:48.522-07:00</when>
+            <gx:coord>21.7523522 44.8428256 574</gx:coord>
+            <when>2015-05-01T04:01:34.495-07:00</when>
+            <gx:coord>21.754147 44.8426637 606</gx:coord>
+            <when>2015-05-01T04:02:19.503-07:00</when>
+            <gx:coord>21.7558996 44.8417139 613</gx:coord>
+            <when>2015-05-01T04:03:23.457-07:00</when>
+            <gx:coord>21.758836 44.841078 613</gx:coord>
+            <when>2015-05-01T04:04:08.460-07:00</when>
+            <gx:coord>21.7602789 44.8402189 600</gx:coord>
+            <when>2015-05-01T04:04:53.496-07:00</when>
+            <gx:coord>21.7616687 44.8394909 611</gx:coord>
+            <when>2015-05-01T04:05:39.467-07:00</when>
+            <gx:coord>21.7637931 44.8397298 623</gx:coord>
+            <when>2015-05-01T04:06:25.479-07:00</when>
+            <gx:coord>21.7660712 44.8402611 638</gx:coord>
+            <when>2015-05-01T04:09:22.504-07:00</when>
+            <gx:coord>21.7729915 44.8431348 630</gx:coord>
+            <when>2015-05-01T04:10:08.496-07:00</when>
+            <gx:coord>21.7732599 44.842746 667</gx:coord>
+            <when>2015-05-01T04:10:53.507-07:00</when>
+            <gx:coord>21.7726897 44.8416475 647</gx:coord>
+            <when>2015-05-01T04:21:34.063-07:00</when>
+            <gx:coord>21.7758201 44.8415603 656</gx:coord>
+            <when>2015-05-01T04:31:39.824-07:00</when>
+            <gx:coord>21.7836767 44.8427798 605</gx:coord>
+            <when>2015-05-01T04:41:47.025-07:00</when>
+            <gx:coord>21.7875432 44.8461544 548</gx:coord>
+            <when>2015-05-01T04:50:00.052-07:00</when>
+            <gx:coord>21.7875432 44.8461544 0</gx:coord>
+            <when>2015-05-01T04:53:36.107-07:00</when>
+            <gx:coord>21.7875432 44.8461544 0</gx:coord>
+            <when>2015-05-01T04:57:50.332-07:00</when>
+            <gx:coord>21.7875432 44.8461544 0</gx:coord>
+            <when>2015-05-01T04:58:44.861-07:00</when>
+            <gx:coord>21.7915147 44.8517692 556</gx:coord>
+            <when>2015-05-01T04:59:33.936-07:00</when>
+            <gx:coord>21.7916575 44.8520612 525</gx:coord>
+            <when>2015-05-01T05:09:46.077-07:00</when>
+            <gx:coord>21.793167 44.8558661 470</gx:coord>
+            <when>2015-05-01T05:15:06.918-07:00</when>
+            <gx:coord>21.7977132 44.8563412 495</gx:coord>
+            <when>2015-05-01T05:19:32.836-07:00</when>
+            <gx:coord>21.8011757 44.8574423 509</gx:coord>
+            <when>2015-05-01T05:25:51.986-07:00</when>
+            <gx:coord>21.8051273 44.8579687 512</gx:coord>
+            <when>2015-05-01T05:31:10.477-07:00</when>
+            <gx:coord>21.8075523 44.8582378 464</gx:coord>
+            <when>2015-05-01T05:31:56.457-07:00</when>
+            <gx:coord>21.8078448 44.8582091 476</gx:coord>
+            <when>2015-05-01T05:35:04.054-07:00</when>
+            <gx:coord>21.8096544 44.8582709 469</gx:coord>
+            <when>2015-05-01T05:36:55.053-07:00</when>
+            <gx:coord>21.8099199 44.8581865 455</gx:coord>
+            <when>2015-05-01T05:37:40.540-07:00</when>
+            <gx:coord>21.8098618 44.8583103 443</gx:coord>
+            <when>2015-05-01T05:38:22.913-07:00</when>
+            <gx:coord>21.8099158 44.8584332 454</gx:coord>
+            <when>2015-05-01T05:43:27.096-07:00</when>
+            <gx:coord>21.8111356 44.8581665 412</gx:coord>
+            
+            <when>2015-05-01T05:46:48.547-07:00</when>
+            <gx:coord>21.8117369 44.8579756 377</gx:coord>
+            <when>2015-05-01T05:47:34.449-07:00</when>
+            <gx:coord>21.8117436 44.8579736 389</gx:coord>
+            <when>2015-05-01T05:54:17.218-07:00</when>
+            <gx:coord>21.8123529 44.8598985 416</gx:coord>
+            <when>2015-05-01T05:55:46.459-07:00</when>
+            <gx:coord>21.8123599 44.8597162 303</gx:coord>
+            <when>2015-05-01T06:00:11.216-07:00</when>
+            <gx:coord>21.813993 44.86024 362</gx:coord>
+            <when>2015-05-01T06:03:12.228-07:00</when>
+            <gx:coord>21.814197 44.8613333 328</gx:coord>
+            <when>2015-05-01T06:07:29.271-07:00</when>
+            <gx:coord>21.8136897 44.8620134 307</gx:coord>
+            <when>2015-05-01T06:11:00.276-07:00</when>
+            <gx:coord>21.8129414 44.8633099 319</gx:coord>
+            <when>2015-05-01T06:14:31.305-07:00</when>
+            <gx:coord>21.8130224 44.8640568 265</gx:coord>
+            <when>2015-05-01T06:24:52.021-07:00</when>
+            <gx:coord>21.8143827 44.8643325 312</gx:coord>
+            <when>2015-05-01T06:45:17.110-07:00</when>
+            <gx:coord>21.8145819 44.8640916 309</gx:coord>
+            <when>2015-05-01T06:47:27.577-07:00</when>
+            <gx:coord>21.8137619 44.864161 272</gx:coord>
+            <when>2015-05-01T06:57:46.468-07:00</when>
+            <gx:coord>21.8132257 44.8645602 258</gx:coord>
+            <when>2015-05-01T07:07:50.252-07:00</when>
+            <gx:coord>21.8134146 44.8624777 285</gx:coord>
+            <when>2015-05-01T07:17:54.865-07:00</when>
+            <gx:coord>21.8140585 44.8602419 307</gx:coord>
+            <when>2015-05-01T07:28:00.953-07:00</when>
+            <gx:coord>21.8122734 44.8586205 331</gx:coord>
+            <when>2015-05-01T07:38:05.476-07:00</when>
+            <gx:coord>21.8119451 44.8581249 328</gx:coord>
+            <when>2015-05-01T07:40:56.848-07:00</when>
+            <gx:coord>21.8117192 44.8577585 417</gx:coord>
+            <when>2015-05-01T07:41:41.992-07:00</when>
+            <gx:coord>21.8117683 44.8579877 376</gx:coord>
+            
+            <when>2015-05-01T08:04:55.096-07:00</when>
+            <gx:coord>21.8038278 44.8579557 529</gx:coord>
+            <when>2015-05-01T08:15:02.138-07:00</when>
+            <gx:coord>21.799596 44.8568537 497</gx:coord>
+            <when>2015-05-01T08:25:06.701-07:00</when>
+            <gx:coord>21.7926945 44.8551975 469</gx:coord>
+            <when>2015-05-01T08:28:06.108-07:00</when>
+            <gx:coord>21.7924593 44.8548342 480</gx:coord>
+           
+            <when>2015-05-01T08:43:32.425-07:00</when>
+            <gx:coord>21.7881478 44.8484378 557</gx:coord>
+            
+            <when>2015-05-01T08:54:31.022-07:00</when>
+            <gx:coord>21.7861414 44.8443252 597</gx:coord>
+            <when>2015-05-01T08:58:21.390-07:00</when>
+            <gx:coord>21.7849119 44.8431911 614</gx:coord>
+            <when>2015-05-01T08:59:06.530-07:00</when>
+            <gx:coord>21.7848602 44.8433012 576</gx:coord>
+            <when>2015-05-01T09:08:11.486-07:00</when>
+            <gx:coord>21.7806621 44.8410948 637</gx:coord>
+            <when>2015-05-01T09:12:32.487-07:00</when>
+            <gx:coord>21.7774575 44.840669 587</gx:coord>
+            <when>2015-05-01T09:16:10.552-07:00</when>
+            <gx:coord>21.7750079 44.8417049 632</gx:coord>
+            <when>2015-05-01T09:28:31.867-07:00</when>
+            <gx:coord>21.7751409 44.8417055 0</gx:coord>
+            <when>2015-05-01T09:29:53.532-07:00</when>
+            <gx:coord>21.7751409 44.8417055 0</gx:coord>
+            <when>2015-05-01T09:31:14.468-07:00</when>
+            <gx:coord>21.7509799 44.8431421 687</gx:coord>
+            <when>2015-05-01T09:32:00.457-07:00</when>
+            <gx:coord>21.7490297 44.8433072 666</gx:coord>
+            <when>2015-05-01T09:32:46.333-07:00</when>
+            <gx:coord>21.7482252 44.8427604 625</gx:coord>
+            <when>2015-05-01T09:33:31.374-07:00</when>
+            <gx:coord>21.7480391 44.8413956 622</gx:coord>
+            <when>2015-05-01T09:34:17.387-07:00</when>
+            <gx:coord>21.7459512 44.8415664 635</gx:coord>
+            <when>2015-05-01T09:35:03.360-07:00</when>
+            <gx:coord>21.7450479 44.8422579 639</gx:coord>
+            <when>2015-05-01T09:35:49.341-07:00</when>
+            <gx:coord>21.7438723 44.8429379 636</gx:coord>
+            <when>2015-05-01T09:36:34.363-07:00</when>
+            <gx:coord>21.7420062 44.8438435 637</gx:coord>
+            <when>2015-05-01T09:37:20.347-07:00</when>
+            <gx:coord>21.739915 44.8448973 650</gx:coord>
+            <when>2015-05-01T09:38:05.363-07:00</when>
+            <gx:coord>21.7376645 44.8460295 645</gx:coord>
+            <when>2015-05-01T09:38:51.362-07:00</when>
+            <gx:coord>21.7355364 44.8468814 646</gx:coord>
+            <when>2015-05-01T09:40:17.872-07:00</when>
+            <gx:coord>21.7349709 44.8471879 650</gx:coord>
+            <when>2015-05-01T09:40:23.003-07:00</when>
+            <gx:coord>21.7349709 44.8471879 0</gx:coord>
+            <when>2015-05-01T09:41:45.347-07:00</when>
+            <gx:coord>21.7349709 44.8471879 0</gx:coord>
+           
+        </gx:Track>
+    </Placemark>
+</Document>
+</kml>

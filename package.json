@@ -1,0 +1,24 @@
+{
+  "name": "tripViewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.js",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "private": true,
+  "dependencies": {
+    "browser-sync": "",
+    "event-stream": "",
+    "gulp": "^3.9.0",
+    "gulp-inject": "",
+    "gulp-stylus": "",
+    "gulp-watch": "",
+    "main-bower-files": ""
+
+  }
+}

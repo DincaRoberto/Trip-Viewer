@@ -1,0 +1,96 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="TripViewer">
+<head>
+    <meta charset="UTF-8">
+    <title>Trip viewer</title>
+    <style>
+        html, body, #map-canvas {
+            height: 100%;
+            margin: 0;
+            padding: 0
+        }
+
+        .panel *{
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: -moz-none;
+            -o-user-select: none;
+            user-select: none;
+        }
+    </style>
+
+    <!-- bower:css -->
+    <!-- bower installed css files will go here... -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- built css files will go here... -->
+    <!-- endinject -->
+</head>
+<body>
+<div class="container-fluid" ng-controller="mapController">
+    <div class="row">
+        <div class="text-center">
+            <h3><small>Devil's Lake</small></h3>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="panel panel-default" >
+                <div class="panel-heading">Menu</div>
+                <div class="panel-body">
+
+                    <!--div class="form-group">
+                        <div class="label label-default"  >Show Markers</div>
+                        <input type="checkbox" aria-label="" ng-model="showMarkers" ng-change="showMarkersChanged()">
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label label-default"  >Show Photos</div>
+                        <input type="checkbox" aria-label="" ng-model="showPhotos" ng-change="showPhotosChanged()">
+                    </div>
+
+                    <button type="button" class="btn btn-primary navbar-btn">Button1</button>
+                    </br>
+                    <button type="button" class="btn btn-primary navbar-btn">Button2</button>
+                    </br>
+                    <button type="button" class="btn btn-primary navbar-btn">Button3</button>
+                    </br>
+                    <button type="button" class="btn btn-primary navbar-btn">Button4</button-->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-md-offset-1">
+            <div class="panel panel-default" >
+                <div class="panel-heading">Map</div>
+                <div class="panel-body">
+                    <div id="map-canvas" style="height: 75vh;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- bower:js -->
+<!-- bower installed scripts will go here... -->
+<!-- endinject -->
+
+<script>
+    GoogleMapsLoader.KEY = 'AIzaSyA0cJRdrwY5vMF_6S4Qbcs6ogvbAR7rXyE';
+    GoogleMapsLoader.LIBRARIES = ['geometry', 'places'];
+    GoogleMapsLoader.load(function() {
+
+    });
+</script>
+<script src="/jquery.xml2json.js" type="text/javascript" language="javascript"></script>
+
+<!-- inject:js -->
+<!-- app scripts will go here... -->
+<!-- endinject -->
+
+</body>
+</html>
