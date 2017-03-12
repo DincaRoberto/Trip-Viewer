@@ -25,7 +25,7 @@ gulp.task('browser-sync', function() {
         files: ['./app']
     });
 
-    gulp.watch("./src/**/*.js").on('change', browserSync.reload);
+    gulp.watch(["./src/**/*.js", "./src/**/*.html"], ['inject-files']).on('change', browserSync.reload);
 });
 
 gulp.task('inject-files', function(){
@@ -36,9 +36,7 @@ gulp.task('inject-files', function(){
     var htmlFiles = gulp.src('./src/**/*.html')
         .pipe(gulp.dest('./build'));
 
-    var cssBootstrap = gulp.src('./bower_components/bootstrap/dist/css/bootstrap.css')
-        .pipe(stylus())
-        .pipe(gulp.dest('./build'));
+    var cssBootstrap = gulp.src('./bower_components/bootstrap/dist/css/bootstrap.css');
 
     gulp.src('./index.html')
         .pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))

@@ -42,7 +42,7 @@
 
                 result.googleWhens.push(when);
                 result.googleCoords.push(new google.maps.LatLng(point[1], point[0]));
-                result.elevation.push(point[2]);
+                result.elevation.push(point[2]*1);
 
                 //var l1 = when.split(":");
 

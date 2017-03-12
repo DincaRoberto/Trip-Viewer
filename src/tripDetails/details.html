@@ -1,1 +1,37 @@
-<div> Details </div>
+<div ng-controller="tripDetailsController as detailsCtrl">
+
+    <div class="panel panel-default" >
+        <div class="panel-heading">Path</div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="(key, val) in detailsCtrl.pathDetails">
+                    <span class="badge"> {{ val + ' m' }} </span>
+                    {{ key }}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="panel panel-default" >
+        <div class="panel-heading" ng-init="show=false">
+            <span>
+                <h3 class="panel-title pull-right">Elevation</h3>
+
+                <button type="button" class="btn btn-default btn-sm " aria-label="Left Align" ng-click="show=!show">
+                    <span
+                            class=""
+                            ng-class="{'glyphicon-menu-down': show == false , 'glyphicon-menu-right': show == true, 'glyphicon':true}"
+                            aria-hidden="true"></span>
+                </button>
+            </span>
+        </div>
+        <div class="panel-body" ng-if="show">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="(key, val) in detailsCtrl.elevationDetails">
+                    <span class="badge"> {{ val + ' m' }} </span>
+                    {{ key }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

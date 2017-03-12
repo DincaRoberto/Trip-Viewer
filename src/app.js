@@ -5,17 +5,17 @@
 (function () {
     'use strict';
 
-    angular.module("TripViewer", [])
+    angular.module("TripViewer", ["Statistics"])
         .controller("mapController", mapController);
 
-    function mapController(pathService, mapService, pathDetailsService) {
+    function mapController($scope, pathService, mapService) {
 
         GoogleMapsLoader.onLoad(function () {
 
             mapService.setElementId('map-canvas');
 
             pathService.loadPath().then(function(){
-                pathDetailsService.computeStatistics();
+                $scope.$broadcast("PATH_LOADED");
             });
 
 
