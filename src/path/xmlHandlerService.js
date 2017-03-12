@@ -31,7 +31,8 @@
         function transformXmlToGoogle(coords, whens) {
             var result = {
                 googleCoords: [],
-                googleWhens: []
+                googleWhens: [],
+                elevation: []
             };
 
             for (var i = 0; i < coords.length; i++) {
@@ -41,6 +42,7 @@
 
                 result.googleWhens.push(when);
                 result.googleCoords.push(new google.maps.LatLng(point[1], point[0]));
+                result.elevation.push(point[2]);
 
                 //var l1 = when.split(":");
 

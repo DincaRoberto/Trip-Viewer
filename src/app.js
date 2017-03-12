@@ -8,13 +8,17 @@
     angular.module("TripViewer", [])
         .controller("mapController", mapController);
 
-    function mapController(pathService, mapService) {
+    function mapController(pathService, mapService, pathDetailsService) {
 
         GoogleMapsLoader.onLoad(function () {
 
             mapService.setElementId('map-canvas');
 
-            pathService.loadPath();
+            pathService.loadPath().then(function(){
+                pathDetailsService.computeStatistics();
+            });
+
+
         });
     }
 })();

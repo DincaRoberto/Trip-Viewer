@@ -33,6 +33,9 @@ gulp.task('inject-files', function(){
         .pipe(stylus())
         .pipe(gulp.dest('./build'));
 
+    var htmlFiles = gulp.src('./src/**/*.html')
+        .pipe(gulp.dest('./build'));
+
     var cssBootstrap = gulp.src('./bower_components/bootstrap/dist/css/bootstrap.css')
         .pipe(stylus())
         .pipe(gulp.dest('./build'));
@@ -41,6 +44,7 @@ gulp.task('inject-files', function(){
         .pipe(inject(gulp.src(bowerFiles(), {read: false}), {name: 'bower'}))
         .pipe(inject(es.merge(
             cssFiles,
+            htmlFiles,
             cssBootstrap,
             gulp.src('./src/**/*.js', {read: false})
         )))

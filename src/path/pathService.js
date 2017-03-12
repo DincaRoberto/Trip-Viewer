@@ -9,7 +9,7 @@
     angular.module("TripViewer")
         .service("pathService", pathService);
 
-    function pathService(mapService, xmlHandlerService) {
+    function pathService($q, mapService, xmlHandlerService) {
         var service = {
 
             loadPath: loadPath
@@ -19,28 +19,39 @@
         service.markers = [];
         service.paths = [];
         service.whens = [];
+        service.coords = [];
+        service.elevation = [];
 
         service.m = 0;
 
         function loadPath() {
+
+            var deferred = $q.defer();
+
             xmlHandlerService.load().then(function (tracks) {
                 mapService.setCenter(tracks.googleCoords[Math.round(tracks.googleCoords.length / 2)]);
-                drawPath(tracks.googleCoords, tracks.googleWhens);
-            })
+                drawPath(tracks.googleCoords, tracks.googleWhens, tracks.elevation);
+
+                deferred.resolve();
+            });
+
+            return deferred.promise;
         }
 
-        function drawPath(googleCoords, googleWhens) {
+        function drawPath(googleCoords, googleWhens, elevation) {
             for (var i = 0; i < googleCoords.length - 1; i++) {
                 var c = [];
 
                 c.push(googleCoords[i]);
                 c.push(googleCoords[i + 1]);
 
+                service.coords.push(googleCoords[i]);
+                service.elevation.push(elevation[i]);
 
                 var v = getSpeed(googleWhens[i], googleWhens[i + 1], googleCoords[i], googleCoords[i + 1]);
                 var color = "rgba(0,0,0,1)";
 
-                console.log(v);
+                //console.log(v);
 
                 if (v < 2000) {
                     color = "hsl(" + Math.round(v / 6) + ",100%,50%)"
