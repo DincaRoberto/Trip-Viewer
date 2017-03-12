@@ -2,17 +2,19 @@
  * Created by r.dinca on 09/03/17.
  */
 
+(function () {
+    'use strict';
 
-var appInstance = angular.module("TripViewer",[]);
+    angular.module("TripViewer", [])
+        .controller("mapController", mapController);
 
-appInstance.controller("mapController", mapController);
+    function mapController(pathService, mapService) {
 
-function mapController(pathService, mapService) {
+        GoogleMapsLoader.onLoad(function () {
 
-    GoogleMapsLoader.onLoad(function() {
+            mapService.setElementId('map-canvas');
 
-        mapService.setElementId('map-canvas');
-
-        pathService.loadPath();
-    });
-}
+            pathService.loadPath();
+        });
+    }
+})();
