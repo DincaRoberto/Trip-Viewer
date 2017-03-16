@@ -16,7 +16,7 @@
         function load() {
             var deferred = $q.defer();
 
-            $.get('../history-04-30-2015.xml', function (xml) {
+            $.get('../trips/Berlin1/path.kml', function (xml) {
                 var kml = $.xml2json(xml);
                 var track = kml['Document']['Placemark']['Track'];
 

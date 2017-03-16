@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom"><Document><name>2017-03-15T15:39:51.828Z</name>
+<Placemark>
+<gx:Track>
+
+<when>2017-03-15T15:39:51.828Z</when>
+<gx:coord>13.3202101 52.5059817 0.0</gx:coord>
+
+<when>2017-03-15T16:28:58.373Z</when>
+<gx:coord>13.32049875 52.50585914 121.0</gx:coord>
+
+<when>2017-03-15T16:30:09.000Z</when>
+<gx:coord>13.32161203 52.50597415 92.0</gx:coord>
+
+<when>2017-03-15T16:31:10.253Z</when>
+<gx:coord>13.32265334 52.50592211 76.0</gx:coord>
+
+<when>2017-03-15T16:32:15.602Z</when>
+<gx:coord>13.3240614 52.505711 0.0</gx:coord>
+
+<when>2017-03-15T16:33:16.000Z</when>
+<gx:coord>13.32531346 52.50564035 98.0</gx:coord>
+
+<when>2017-03-15T16:34:16.000Z</when>
+<gx:coord>13.32636246 52.50556479 106.0</gx:coord>
+
+<when>2017-03-15T16:35:39.000Z</when>
+<gx:coord>13.32779395 52.5057145 74.0</gx:coord>
+
+<when>2017-03-15T16:38:03.067Z</when>
+<gx:coord>13.32953469 52.50507207 172.0</gx:coord>
+
+<when>2017-03-15T16:39:39.251Z</when>
+<gx:coord>13.33107285 52.5058415 70.0</gx:coord>
+
+<when>2017-03-15T16:40:40.000Z</when>
+<gx:coord>13.33209322 52.50467738 85.0</gx:coord>
+
+<when>2017-03-15T16:41:41.000Z</when>
+<gx:coord>13.33176443 52.50408901 97.0</gx:coord>
+
+<when>2017-03-15T16:42:42.000Z</when>
+<gx:coord>13.33322586 52.50430429 84.0</gx:coord>
+
+<when>2017-03-15T16:43:43.000Z</when>
+<gx:coord>13.3341973 52.50453995 72.0</gx:coord>
+
+<when>2017-03-15T16:44:44.000Z</when>
+<gx:coord>13.33567661 52.50456438 82.0</gx:coord>
+
+<when>2017-03-15T16:45:52.000Z</when>
+<gx:coord>13.33733594 52.50412746 89.0</gx:coord>
+
+<when>2017-03-15T16:48:37.000Z</when>
+<gx:coord>13.33979362 52.50285734 140.0</gx:coord>
+
+<when>2017-03-15T16:50:02.592Z</when>
+<gx:coord>13.34155628 52.50206377 131.0</gx:coord>
+
+<when>2017-03-15T16:51:44.000Z</when>
+<gx:coord>13.34283194 52.50150283 70.0</gx:coord>
+
+<when>2017-03-15T16:53:11.329Z</when>
+<gx:coord>13.34453351 52.5015422 85.0</gx:coord>
+
+<when>2017-03-15T16:56:11.355Z</when>
+<gx:coord>13.34680375 52.50091808 108.0</gx:coord>
+
+<when>2017-03-15T16:57:39.584Z</when>
+<gx:coord>13.34903766 52.50064802 81.0</gx:coord>
+
+<when>2017-03-15T16:58:41.000Z</when>
+<gx:coord>13.34986137 52.50031436 91.0</gx:coord>
+
+<when>2017-03-15T17:00:37.956Z</when>
+<gx:coord>13.352181 52.4997766 0.0</gx:coord>
+
+<when>2017-03-15T17:01:39.000Z</when>
+<gx:coord>13.35332648 52.49945124 89.0</gx:coord>
+</gx:Track>
+</Placemark></Document></kml>

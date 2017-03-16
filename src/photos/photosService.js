@@ -59,18 +59,20 @@
                         }
 
                         var image = {
-                            url: '../images/' + key,
-                            // This marker is 20 pixels wide by 32 pixels tall.
+                            url: '../md/trips/Berlin1/Photos/' + key.split('.')[0] + '-md.' + key.split('.')[1],
                             size: new google.maps.Size(50, 50),
-
-                            scaledSize: new google.maps.Size(100, 100),
-                            // The origin for this image is 0,0.
+                            //scaledSize: new google.maps.Size(50, 50),
                             origin: new google.maps.Point(25, 25),
-                            // The anchor for this image is the base of the flagpole at 0,32.
                             anchor: new google.maps.Point(0, 32)
                         };
 
-                        mapService.drawImage(image, position);
+                        var marker = mapService.drawImage(image, position);
+
+                        marker.addListener('click', function(event, e) {
+                            console.log(event);
+                            console.log(e);
+                            console.log(this);
+                        }.bind(marker));
                     }
                 },
                 error: function (data) {

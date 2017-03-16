@@ -29,15 +29,15 @@ function gps2Num($coordPart) {
 }
 
 
-$handle = opendir('./images/');
+$handle = opendir('./trips/Berlin1/Photos/');
 
         while($file = readdir($handle)){
             if($file !== '.' && $file !== '..' && $file!=='Thumbs.db' && $file!=='.DS_Store'){
                 $d = [];
-                array_push($filenameArray, "images/$file");
+                array_push($filenameArray, "./trips/Berlin1/Photos/$file");
 
                 try {
-                    $exif = exif_read_data("images/$file", 0, true);
+                    $exif = exif_read_data("./trips/Berlin1/Photos/$file", 0, true);
 
                     //echo(var_dump($exif));
 

@@ -13,10 +13,12 @@
   "private": true,
   "dependencies": {
     "browser-sync": "",
+    "bluebird": "",
     "event-stream": "",
     "gulp": "^3.9.0",
     "gulp-connect-php": "",
     "gulp-inject": "",
+    "gulp-jimp-resize": "",
     "gulp-stylus": "",
     "gulp-watch": "",
     "main-bower-files": ""

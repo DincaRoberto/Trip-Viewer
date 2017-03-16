@@ -3,14 +3,15 @@
  */
 
 
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
-var bowerFiles = require('main-bower-files'),
-    inject = require('gulp-inject'),
-    stylus = require('gulp-stylus'),
-    es = require('event-stream'),
-    watch = require('gulp-watch');
-    connect = require('gulp-connect-php');
+var gulp        = require('gulp'),
+    browserSync = require('browser-sync').create(),
+    bowerFiles  = require('main-bower-files'),
+    inject      = require('gulp-inject'),
+    stylus      = require('gulp-stylus'),
+    es          = require('event-stream'),
+    watch       = require('gulp-watch'),
+    connect     = require('gulp-connect-php'),
+    jimp        = require("gulp-jimp-resize");
 
 // Static server
 gulp.task('browser-sync', function() {
@@ -46,6 +47,18 @@ gulp.task('inject-files', function(){
             gulp.src('./src/**/*.js', {read: false})
         )))
         .pipe(gulp.dest('./build'));
+});
+
+gulp.task('images', function() {
+    return gulp.src(
+         ['./trips/**/*.{png,jpg,bmp}', '!./trips/**/*-md.{png,jpg,bmp}']
+    )
+        .pipe(jimp({
+            sizes: [
+                {"suffix": "md", "width": 100}
+            ]
+        }))
+        .pipe(gulp.dest('./md/'));
 });
 
 gulp.task('connect', function() {
