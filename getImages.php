@@ -1,5 +1,3 @@
-
-
 <?php
 
 $filenameArray = [];
@@ -38,17 +36,28 @@ $handle = opendir('./images/');
                 $d = [];
                 array_push($filenameArray, "images/$file");
 
-                $exif = exif_read_data("images/$file", 0, true);
+                try {
+                    $exif = exif_read_data("images/$file", 0, true);
 
-                //$lon = getGps($exif["GPSLongitude"], $exif['GPSLongitudeRef']);
-                //$lat = getGps($exif["GPSLatitude"], $exif['GPSLatitudeRef']);
-                
-                foreach ($exif as $key => $section) {
-                    foreach ($section as $name => $val) {
-                        if ( "$key.$name"!=='EXIF.UserComment'){
-                            $d[$key.$name] = $val;
+                    //echo(var_dump($exif));
+
+                    //$lon = getGps($exif["GPSLongitude"], $exif['GPSLongitudeRef']);
+                    //$lat = getGps($exif["GPSLatitude"], $exif['GPSLatitudeRef']);
+
+                    foreach ($exif as $key => $section) {
+                        foreach ($section as $name => $val) {
+                            if ( $key.$name!=='EXIFUserComment' && $key.$name!=='EXIFMakerNote' && $key.$name!=='EXIFComponentsConfiguration'){
+                                $d[$key.$name] = $val;
+                            }
                         }
                     }
+
+                    //echo(var_dump($d));
+
+                } catch(\Exception $e) {
+                    // echo($e->getMessage());
+                } finally {
+
                 }
 
                 $exifData[$file] = $d;

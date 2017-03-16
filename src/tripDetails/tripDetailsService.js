@@ -8,7 +8,8 @@
     function tripDetailsService(pathService, statisticsService) {
         var service = {
             computeStatistics : computeStatistics,
-            computeElevationStatistics: computeElevationStatistics
+            computeElevationStatistics: computeElevationStatistics,
+            computeSpeedStatistics: computeSpeedStatistics
         };
 
         function computeStatistics() {
@@ -29,6 +30,20 @@
                 median: Math.floor(statisticsService.median(pathService.elevation)),
                 irq: Math.floor(statisticsService.irq(pathService.elevation))
             }
+        }
+
+        function computeSpeedStatistics() {
+            return {
+                max: roundTo2Decimal(Math.floor(statisticsService.max(pathService.speed))/1000),
+                min: roundTo2Decimal(Math.floor(statisticsService.min(pathService.speed))/1000),
+                mean: roundTo2Decimal(Math.floor(statisticsService.mean(pathService.speed))/1000),
+                median: roundTo2Decimal(Math.floor(statisticsService.median(pathService.speed))/1000),
+                irq: roundTo2Decimal(Math.floor(statisticsService.irq(pathService.speed))/1000)
+            }
+        }
+
+        function roundTo2Decimal(num) {
+            return Math.round(num * 100) / 100
         }
 
         return service;

@@ -14,7 +14,8 @@
             restrict: 'E',
             scope: {
                 'details': '=',
-                'units': '@'
+                'units': '@',
+                'title': '@'
             },
             templateUrl: '/src/tripDetails/expandable-details-list/expandable-details-list.html'
         }

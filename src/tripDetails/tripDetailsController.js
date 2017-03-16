@@ -16,8 +16,9 @@
             vm.pathDetails = tripDetailsService.computeStatistics();
 
             vm.elevationDetails = tripDetailsService.computeElevationStatistics();
+            vm.speedDetails = tripDetailsService.computeSpeedStatistics();
 
-            console.log(vm.elevationDetails)
+            console.log(vm.speedDetails)
         });
     }
 })();

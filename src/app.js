@@ -8,7 +8,7 @@
     angular.module("TripViewer", ["Statistics"])
         .controller("mapController", mapController);
 
-    function mapController($scope, pathService, mapService) {
+    function mapController($scope, pathService, mapService, photosService) {
 
         GoogleMapsLoader.onLoad(function () {
 
@@ -16,6 +16,8 @@
 
             pathService.loadPath().then(function(){
                 $scope.$broadcast("PATH_LOADED");
+
+                photosService.load();
             });
 
 

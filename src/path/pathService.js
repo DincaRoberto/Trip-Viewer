@@ -11,9 +11,7 @@
 
     function pathService($q, mapService, xmlHandlerService) {
         var service = {
-
             loadPath: loadPath
-
         };
 
         service.markers = [];
@@ -21,6 +19,7 @@
         service.whens = [];
         service.coords = [];
         service.elevation = [];
+        service.speed = [];
 
         service.m = 0;
 
@@ -48,7 +47,13 @@
                 service.coords.push(googleCoords[i]);
                 service.elevation.push(elevation[i]);
 
+                var l1 = googleWhens[i].split(":");
+                var ll1 = (l1[0] * 3600) + (l1[1] * 60) + (l1[2] * 1);
+                service.whens.push(ll1);
+
                 var v = getSpeed(googleWhens[i], googleWhens[i + 1], googleCoords[i], googleCoords[i + 1]);
+                service.speed.push(v);
+
                 var color = "rgba(0,0,0,1)";
 
                 //console.log(v);

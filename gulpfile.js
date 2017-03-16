@@ -10,13 +10,12 @@ var bowerFiles = require('main-bower-files'),
     stylus = require('gulp-stylus'),
     es = require('event-stream'),
     watch = require('gulp-watch');
+    connect = require('gulp-connect-php');
 
 // Static server
 gulp.task('browser-sync', function() {
     browserSync.init({
-        server: {
-            baseDir: "./"
-        },
+        proxy: '127.0.0.1:8000',
         startPath: "./build/",
         watchOptions: {
             ignoreInitial: true,
@@ -49,8 +48,12 @@ gulp.task('inject-files', function(){
         .pipe(gulp.dest('./build'));
 });
 
+gulp.task('connect', function() {
+    connect.server();
+});
 
 
-gulp.task('default', ['inject-files', 'browser-sync'], function(){
+
+gulp.task('default', ['inject-files', 'connect', 'browser-sync'], function(){
 
 });
