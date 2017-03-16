@@ -14,7 +14,7 @@
 
         service.load = load;
 
-        function load() {
+        function load(tripName) {
             $.ajax({
                 url: GET_IMAGES,
                 crossOrigin: true,
@@ -67,7 +67,7 @@
                         };
 
                         var image = {
-                            url:  IMAGES_MD_PATH + marker.photoMdUrl ,
+                            url:  IMAGES_MD_PATH  + tripName + "/Photos/" + marker.photoMdUrl ,
                             size: new google.maps.Size(50, 50),
                             //scaledSize: new google.maps.Size(50, 50),
                             origin: new google.maps.Point(25, 25),

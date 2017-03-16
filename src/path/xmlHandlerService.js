@@ -8,15 +8,15 @@
     angular.module("TripViewer")
         .service("xmlHandlerService", xmlHandlerService);
 
-    function xmlHandlerService($q, XML_PATH) {
+    function xmlHandlerService($q) {
         var service = {
             load: load
         };
 
-        function load() {
+        function load(path) {
             var deferred = $q.defer();
 
-            $.get(XML_PATH, function (xml) {
+            $.get(path, function (xml) {
                 var kml = $.xml2json(xml);
                 var track = kml['Document']['Placemark']['Track'];
 

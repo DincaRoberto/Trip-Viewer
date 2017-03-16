@@ -9,7 +9,7 @@
     angular.module("TripViewer")
         .service("pathService", pathService);
 
-    function pathService($q, mapService, xmlHandlerService) {
+    function pathService($q, XML_PATH, mapService, xmlHandlerService) {
         var service = {
             loadPath: loadPath
         };
@@ -23,14 +23,13 @@
 
         service.m = 0;
 
-        function loadPath() {
+        function loadPath(tripName) {
 
             var deferred = $q.defer();
 
-            xmlHandlerService.load().then(function (tracks) {
+            xmlHandlerService.load(XML_PATH + tripName + "/path.kml").then(function (tracks) {
                 mapService.setCenter(tracks.googleCoords[Math.round(tracks.googleCoords.length / 2)]);
                 drawPath(tracks.googleCoords, tracks.googleWhens, tracks.elevation);
-
                 deferred.resolve();
             });
 
