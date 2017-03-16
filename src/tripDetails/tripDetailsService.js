@@ -13,12 +13,12 @@
         };
 
         function computeStatistics() {
-            var dist = Math.floor(google.maps.geometry.spherical.computeLength([pathService.coords[0], pathService.coords[pathService.coords.length-1]]));
-            //console.log(dist);
-            //console.log(pathService.elevation);
+            var dist = Math.floor(google.maps.geometry.spherical.computeDistanceBetween(pathService.coords[0], pathService.coords[pathService.coords.length-1]));
+            var length = Math.floor(google.maps.geometry.spherical.computeLength(pathService.coords));
 
             return {
-                startEndDist: dist
+                startEndDist: dist,
+                length: length
             }
         }
 

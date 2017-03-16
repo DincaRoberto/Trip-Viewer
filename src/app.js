@@ -6,21 +6,12 @@
     'use strict';
 
     angular.module("TripViewer", ["Statistics"])
-        .controller("mapController", mapController);
+        .config(config);
 
-    function mapController($scope, pathService, mapService, photosService) {
+    function config($provide) {
+        $provide.value('GET_IMAGES', "http://localhost:3000/getImages.php");
+        $provide.value('IMAGES_MD_PATH', "../md/trips/Berlin1/Photos/");
+        $provide.value('XML_PATH', "../trips/Berlin1/path.kml");
 
-        GoogleMapsLoader.onLoad(function () {
-
-            mapService.setElementId('map-canvas');
-
-            pathService.loadPath().then(function(){
-                $scope.$broadcast("PATH_LOADED");
-
-                photosService.load();
-            });
-
-
-        });
     }
 })();

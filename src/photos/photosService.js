@@ -8,7 +8,7 @@
     angular.module("TripViewer")
         .service("photosService", photosService);
 
-    function photosService(pathService, mapService) {
+    function photosService(GET_IMAGES, IMAGES_MD_PATH, pathService, mapService) {
 
         var service = {};
 
@@ -16,7 +16,7 @@
 
         function load() {
             $.ajax({
-                url: "http://localhost:3000/getImages.php",
+                url: GET_IMAGES,
                 crossOrigin: true,
                 dataType: "json",
                 success: function (data) {
@@ -41,36 +41,42 @@
 
                         if (value['GPSGPSLatitude'] && value['GPSGPSLongitude']){
 
+                            var dmstLat = mapService.ConvertStringGPSToDMST(value['GPSGPSLatitude']);
                             var lat = mapService.ConvertDMSToDD(
-                                (value['GPSGPSLatitude'][0].split('/')[0]*1)/(value['GPSGPSLatitude'][0].split('/')[1]*1),
-                                (value['GPSGPSLatitude'][1].split('/')[0]*1)/(value['GPSGPSLatitude'][1].split('/')[1]*1),
-                                (value['GPSGPSLatitude'][2].split('/')[0]*1)/(value['GPSGPSLatitude'][2].split('/')[1]*1),
+                                dmstLat[0],
+                                dmstLat[1],
+                                dmstLat[2],
                                 value['GPSGPSLatitudeRef']
                             );
 
+                            var dmstLng = mapService.ConvertStringGPSToDMST(value['GPSGPSLongitude']);
                             var lng = mapService.ConvertDMSToDD(
-                                (value['GPSGPSLongitude'][0].split('/')[0]*1)/(value['GPSGPSLongitude'][0].split('/')[1]*1),
-                                (value['GPSGPSLongitude'][1].split('/')[0]*1)/(value['GPSGPSLongitude'][1].split('/')[1]*1),
-                                (value['GPSGPSLongitude'][2].split('/')[0]*1)/(value['GPSGPSLongitude'][2].split('/')[1]*1),
+                                dmstLng[0],
+                                dmstLng[1],
+                                dmstLng[2],
                                 value['GPSGPSLongitudeRef']
                             );
 
                             position = mapService.createPosition(lat, lng);
                         }
 
+                        var marker = {
+                            photoMdUrl: key.split('.')[0] + '-md.' + key.split('.')[1],
+                            photoUrl: key,
+                            mapMarker: null
+                        };
+
                         var image = {
-                            url: '../md/trips/Berlin1/Photos/' + key.split('.')[0] + '-md.' + key.split('.')[1],
+                            url:  IMAGES_MD_PATH + marker.photoMdUrl ,
                             size: new google.maps.Size(50, 50),
                             //scaledSize: new google.maps.Size(50, 50),
                             origin: new google.maps.Point(25, 25),
                             anchor: new google.maps.Point(0, 32)
                         };
 
-                        var marker = mapService.drawImage(image, position);
+                        marker.mapMarker = mapService.drawImage(image, position);
 
-                        marker.addListener('click', function(event, e) {
-                            console.log(event);
-                            console.log(e);
+                        marker.mapMarker.addListener('click', function() {
                             console.log(this);
                         }.bind(marker));
                     }

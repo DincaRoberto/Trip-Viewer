@@ -16,6 +16,7 @@
             drawImage: drawImage,
             createPosition: createPosition,
             ConvertDMSToDD: ConvertDMSToDD,
+            ConvertStringGPSToDMST: ConvertStringGPSToDMST,
             map: null
         };
 
@@ -75,6 +76,16 @@
                 dd = dd * -1;
             } // Don't do anything for N or E
             return dd;
+        }
+
+        function ConvertStringGPSToDMST(str) {
+            var result = [];
+
+            result.push( (str[0].split('/')[0]*1)/(str[0].split('/')[1]*1) );
+            result.push( (str[1].split('/')[0]*1)/(str[1].split('/')[1]*1) );
+            result.push( (str[2].split('/')[0]*1)/(str[2].split('/')[1]*1) );
+
+            return result;
         }
 
         return service;
