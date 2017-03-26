@@ -8,81 +8,74 @@
     angular.module("TripViewer")
         .service("photosService", photosService);
 
-    function photosService(GET_IMAGES, IMAGES_MD_PATH, pathService, mapService) {
+    function photosService(GET_IMAGES, IMAGES_MD_PATH, pathService, mapService, photosLoader) {
 
         var service = {};
 
         service.load = load;
 
         function load(tripName) {
-            $.ajax({
-                url: GET_IMAGES,
-                crossOrigin: true,
-                dataType: "json",
-                success: function (data) {
-                    console.log(data);
-                    for (var key in data) {
-                        var value = data[key];
-                        //console.log(value.EXIFDateTimeOriginal.split(" ")[1].split(":"));
 
-                        var photoTimeArray = value.EXIFDateTimeOriginal.split(" ")[1].split(":");
+            photosLoader.load(GET_IMAGES).then(function (data) {
+                console.log(data);
+                for (var key in data) {
+                    var value = data[key];
+                    //console.log(value.EXIFDateTimeOriginal.split(" ")[1].split(":"));
 
-                        var photoTime = ((photoTimeArray[0] * 1) - 10) * 3600 + (photoTimeArray[1] * 60) + photoTimeArray[2] * 1;
+                    var photoTimeArray = value.EXIFDateTimeOriginal.split(" ")[1].split(":");
 
-                        //console.log(photoTimeArray);
+                    var photoTime = ((photoTimeArray[0] * 1) - 10) * 3600 + (photoTimeArray[1] * 60) + photoTimeArray[2] * 1;
 
-                        var i = 0;
+                    //console.log(photoTimeArray);
 
-                        while (pathService.whens[i] < photoTime) {
-                            i++;
-                        }
+                    var i = 0;
 
-                        var position = pathService.coords[i];
-
-                        if (value['GPSGPSLatitude'] && value['GPSGPSLongitude']){
-
-                            var dmstLat = mapService.ConvertStringGPSToDMST(value['GPSGPSLatitude']);
-                            var lat = mapService.ConvertDMSToDD(
-                                dmstLat[0],
-                                dmstLat[1],
-                                dmstLat[2],
-                                value['GPSGPSLatitudeRef']
-                            );
-
-                            var dmstLng = mapService.ConvertStringGPSToDMST(value['GPSGPSLongitude']);
-                            var lng = mapService.ConvertDMSToDD(
-                                dmstLng[0],
-                                dmstLng[1],
-                                dmstLng[2],
-                                value['GPSGPSLongitudeRef']
-                            );
-
-                            position = mapService.createPosition(lat, lng);
-                        }
-
-                        var marker = {
-                            photoMdUrl: key.split('.')[0] + '-md.' + key.split('.')[1],
-                            photoUrl: key,
-                            mapMarker: null
-                        };
-
-                        var image = {
-                            url:  IMAGES_MD_PATH  + tripName + "/Photos/" + marker.photoMdUrl ,
-                            size: new google.maps.Size(50, 50),
-                            //scaledSize: new google.maps.Size(50, 50),
-                            origin: new google.maps.Point(25, 25),
-                            anchor: new google.maps.Point(0, 32)
-                        };
-
-                        marker.mapMarker = mapService.drawImage(image, position);
-
-                        marker.mapMarker.addListener('click', function() {
-                            console.log(this);
-                        }.bind(marker));
+                    while (pathService.whens[i] < photoTime) {
+                        i++;
                     }
-                },
-                error: function (data) {
-                    console.log(data)
+
+                    var position = pathService.coords[i];
+
+                    if (value['GPSGPSLatitude'] && value['GPSGPSLongitude']){
+
+                        var dmstLat = mapService.ConvertStringGPSToDMST(value['GPSGPSLatitude']);
+                        var lat = mapService.ConvertDMSToDD(
+                            dmstLat[0],
+                            dmstLat[1],
+                            dmstLat[2],
+                            value['GPSGPSLatitudeRef']
+                        );
+
+                        var dmstLng = mapService.ConvertStringGPSToDMST(value['GPSGPSLongitude']);
+                        var lng = mapService.ConvertDMSToDD(
+                            dmstLng[0],
+                            dmstLng[1],
+                            dmstLng[2],
+                            value['GPSGPSLongitudeRef']
+                        );
+
+                        position = mapService.createPosition(lat, lng);
+                    }
+
+                    var marker = {
+                        photoMdUrl: key.split('.')[0] + '-md.' + key.split('.')[1],
+                        photoUrl: key,
+                        mapMarker: null
+                    };
+
+                    var image = {
+                        url:  IMAGES_MD_PATH  + tripName + "/Photos/" + marker.photoMdUrl ,
+                        size: new google.maps.Size(50, 50),
+                        //scaledSize: new google.maps.Size(50, 50),
+                        origin: new google.maps.Point(25, 25),
+                        anchor: new google.maps.Point(0, 32)
+                    };
+
+                    marker.mapMarker = mapService.drawImage(image, position);
+
+                    marker.mapMarker.addListener('click', function() {
+                        console.log(this);
+                    }.bind(marker));
                 }
             });
         }

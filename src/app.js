@@ -5,7 +5,7 @@
 (function () {
     'use strict';
 
-    angular.module("TripViewer", ["Statistics"])
+    angular.module("TripViewer", ["Statistics", "api"])
         .config(config).controller('appController', appController);
 
     function config($provide) {
@@ -19,14 +19,12 @@
 
             mapService.setElementId('map-canvas');
 
-            var tripName = "Berlin1";
+            $scope.tripName = "Berlin1";
 
-            pathService.loadPath(tripName).then(function(){
+            pathService.loadPath($scope.tripName).then(function(){
                 $scope.$broadcast("PATH_LOADED");
-                photosService.load(tripName);
+                photosService.load($scope.tripName);
             });
-
-
         });
     }
 })();

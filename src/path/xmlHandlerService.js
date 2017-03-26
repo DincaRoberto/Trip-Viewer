@@ -8,24 +8,16 @@
     angular.module("TripViewer")
         .service("xmlHandlerService", xmlHandlerService);
 
-    function xmlHandlerService($q) {
+    function xmlHandlerService(xmlLoader) {
         var service = {
             load: load
         };
 
         function load(path) {
-            var deferred = $q.defer();
-
-            $.get(path, function (xml) {
-                var kml = $.xml2json(xml);
-                var track = kml['Document']['Placemark']['Track'];
-
-                var result = transformXmlToGoogle(track['coord'], track['when']);
-
-                deferred.resolve(result);
-            });
-
-            return deferred.promise;
+            return (xmlLoader.load(path).then(function (resultJson) {
+                var track = resultJson['Document']['Placemark']['Track'];
+                return transformXmlToGoogle(track['coord'], track['when']);
+            }));
         }
 
         function transformXmlToGoogle(coords, whens) {

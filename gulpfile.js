@@ -55,7 +55,7 @@ gulp.task('images', function() {
     )
         .pipe(jimp({
             sizes: [
-                {"suffix": "md", "width": 100}
+                {"suffix": "md", "width": 100, "height": 100}
             ]
         }))
         .pipe(gulp.dest('./md/'));

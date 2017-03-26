@@ -1,16 +1,20 @@
 <div ng-controller="tripDetailsController as detailsCtrl">
 
-    <div class="panel panel-default" >
-        <div class="panel-heading">Path</div>
-        <div class="panel-body">
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="(key, val) in detailsCtrl.pathDetails">
-                    <span class="badge"> {{ val + ' m' }} </span>
-                    {{ key }}
-                </li>
-            </ul>
-        </div>
-    </div>
+    <expandable-details-list
+            details="detailsCtrl.timeDetails"
+            units=""
+            title="Time"
+    >
+
+    </expandable-details-list>
+
+    <expandable-details-list
+            details="detailsCtrl.pathDetails"
+            units="m"
+            title="Path"
+    >
+
+    </expandable-details-list>
 
     <expandable-details-list
             details="detailsCtrl.elevationDetails"

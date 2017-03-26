@@ -9,7 +9,8 @@
         var service = {
             computeStatistics : computeStatistics,
             computeElevationStatistics: computeElevationStatistics,
-            computeSpeedStatistics: computeSpeedStatistics
+            computeSpeedStatistics: computeSpeedStatistics,
+            computeTimeStatistics: computeTimeStatistics
         };
 
         function computeStatistics() {
@@ -19,6 +20,15 @@
             return {
                 startEndDist: dist,
                 length: length
+            }
+        }
+
+        function computeTimeStatistics() {
+            var duration = (pathService.whens[pathService.whens.length-1] - pathService.whens[0]);
+            var stringDuration = Math.floor(duration / 60) + "m " + duration % 60 + "s";
+
+            return {
+                duration: stringDuration
             }
         }
 
