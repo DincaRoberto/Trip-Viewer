@@ -9,22 +9,33 @@
         .config(config).controller('appController', appController);
 
     function config($provide) {
+        $provide.value('GET_TRIPS', "http://localhost:3000/getTrips.php");
         $provide.value('GET_IMAGES', "http://localhost:3000/getImages.php");
         $provide.value('IMAGES_MD_PATH', "../md/trips/");
         $provide.value('XML_PATH', "../trips/");
     }
 
-    function appController($scope, pathService, mapService, photosService) {
+    function appController($scope, tripsService, pathService, mapService, photosService) {
         GoogleMapsLoader.onLoad(function () {
 
             mapService.setElementId('map-canvas');
 
-            $scope.tripName = "Berlin1";
+            //$scope.tripName = "Berlin1";
 
-            pathService.loadPath($scope.tripName).then(function(){
-                $scope.$broadcast("PATH_LOADED");
-                photosService.load($scope.tripName);
+            tripsService.loadTrips().then(function(res){
+                $scope.trips = res;
             });
+
+            $scope.onNewTripSelected = function onNewTripSelected(){
+                console.log($scope.trip);
+
+                 pathService.loadPath($scope.trip).then(function(){
+                     $scope.$broadcast("PATH_LOADED");
+                     photosService.load($scope.trip);
+                 });
+            }
         });
+
+
     }
 })();

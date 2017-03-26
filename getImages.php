@@ -1,7 +1,10 @@
 <?php
 
+
+
 $filenameArray = [];
 $exifData = [];
+$currentTrip = $_GET["currentTrip"];
 
 function getGps($exifCoord, $hemi) {
 
@@ -29,15 +32,15 @@ function gps2Num($coordPart) {
 }
 
 
-$handle = opendir('./trips/Berlin1/Photos/');
+$handle = opendir("./trips/".$currentTrip."/Photos/");
 
         while($file = readdir($handle)){
             if($file !== '.' && $file !== '..' && $file!=='Thumbs.db' && $file!=='.DS_Store'){
                 $d = [];
-                array_push($filenameArray, "./trips/Berlin1/Photos/$file");
+                array_push($filenameArray, "./trips/".$currentTrip."/Photos/$file");
 
                 try {
-                    $exif = exif_read_data("./trips/Berlin1/Photos/$file", 0, true);
+                    $exif = exif_read_data("./trips/".$currentTrip."/Photos/$file", 0, true);
 
                     //echo(var_dump($exif));
 

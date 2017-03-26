@@ -25,7 +25,7 @@ gulp.task('browser-sync', function() {
         files: ['./app']
     });
 
-    gulp.watch(["./src/**/*.js", "./src/**/*.html"], ['inject-files']).on('change', browserSync.reload);
+    gulp.watch(["./src/**/*.js", "./src/**/*.html", "./index.html"], ['inject-files']).on('change', browserSync.reload);
 });
 
 gulp.task('inject-files', function(){

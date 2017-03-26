@@ -14,10 +14,16 @@
 
         service.load = load;
 
+        var markers = [];
+
         function load(tripName) {
 
-            photosLoader.load(GET_IMAGES).then(function (data) {
-                console.log(data);
+            while(markers.length > 0){
+                markers.pop().mapMarker.setMap(null);
+            }
+
+            photosLoader.load(GET_IMAGES + "?currentTrip="+tripName).then(function (data) {
+
                 for (var key in data) {
                     var value = data[key];
                     //console.log(value.EXIFDateTimeOriginal.split(" ")[1].split(":"));
@@ -76,6 +82,8 @@
                     marker.mapMarker.addListener('click', function() {
                         console.log(this);
                     }.bind(marker));
+
+                    markers.push(marker);
                 }
             });
         }

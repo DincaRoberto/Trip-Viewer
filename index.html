@@ -35,8 +35,14 @@
 <body>
 <div class="container-fluid" ng-controller="appController">
     <div class="row">
-        <div class="text-center">
-            <h3><small> {{ tripName }} </small></h3>
+        <div class="text-center col-md-4 col-md-offset-4">
+            <!--h3><small> {{ tripName }} </small></h3-->
+            <div class="form-group" >
+                <label for="sel1">Your trip:</label>
+                <select class="form-control" id="sel1" ng-model="trip" ng-change="onNewTripSelected()">
+                    <option ng-repeat="trip in trips">{{trip}}</option>
+                </select>
+            </div>
         </div>
         <hr>
     </div>
