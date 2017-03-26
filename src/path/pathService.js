@@ -25,6 +25,17 @@
 
         function loadPath(tripName) {
 
+            while (service.paths.length > 0){
+                service.paths.pop().setMap(null);
+            }
+
+            service.whens = [];
+            service.coords = [];
+            service.elevation = [];
+            service.speed = [];
+
+            service.m = 0;
+
             var deferred = $q.defer();
 
             xmlHandlerService.load(XML_PATH + tripName + "/path.kml").then(function (tracks) {
