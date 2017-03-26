@@ -2,9 +2,13 @@
 
 Display Google Maps
 
-Display Path fetched from an xml
+Get all the folders in ./trips
 
-Display images for the ./images folder
+Considers them as trips and lets the user choose one of the
+
+For that trip:
+* displays the photos and then path
+* computes some statistics available in the left panel
 
 # Installation
 
